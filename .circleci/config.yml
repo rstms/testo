@@ -15,11 +15,11 @@ jobs:
     steps:
       - checkout
       - run:
-        name: install dependencies
-        command: |
-          pip install --update tox tox-pyenv
-          pyenv local 3.6 3.7 3.8 3.9
-          make dev
+          name: install dependencies
+          command: |
+            pip install --update tox tox-pyenv
+            pyenv local 3.6 3.7 3.8 3.9
+            make dev
       - run:
-        name: Run all tests
-        command: make tox
+          name: Run all tests
+          command: make tox
