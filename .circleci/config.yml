@@ -19,9 +19,7 @@ jobs:
           command: |
             pip install --upgrade pip setuptools wheel
             pip install --upgrade tox tox-pyenv
-            ls -al /home/circleci/.pyenv
-            ls -al /home/circleci/.pyenv/versions
-            pyenv --help
+            pyenv versions
             pyenv local 3.6 3.7 3.8 3.9
             make dev
       - run:
