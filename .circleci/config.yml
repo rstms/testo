@@ -17,7 +17,7 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            pip install --update tox tox-pyenv
+            pip install --upgrade tox tox-pyenv
             pyenv local 3.6 3.7 3.8 3.9
             make dev
       - run:
