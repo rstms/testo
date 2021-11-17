@@ -14,11 +14,12 @@ jobs:
       - image: cimg/python:3.9
     steps:
       - checkout
-      - dependencies
-        overrride:
-          - make dev
-          - pip install tox-pyenv
-          - pyenv local 3.6 3.7 3.8 3.9
       - run:
-          name: Run all tests
-          command: make tox
+        name: install dependencies
+        command: |
+          pip install --update tox tox-pyenv
+          pyenv local 3.6 3.7 3.8 3.9
+          make dev
+      - run:
+        name: Run all tests
+        command: make tox
