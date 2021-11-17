@@ -12,15 +12,14 @@ jobs:
   build-and-test:
     docker:
       - image: cimg/python:3.9
-    dependencies:
-      override:
-        - pip install tox tox-pyenv
-        - pyenv local 3.6 3.7 3.8 3.9
     steps:
       - checkout
       - run:
           name: Install dev dependencies 
-          command: make dev
+          command: |
+            make dev
+            pip install tox tox-pyenv
+            pyenv local 3.6 3.7 3.8 3.9
       - run:
           name: Run all tests
           command: make tox
