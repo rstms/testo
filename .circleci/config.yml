@@ -22,7 +22,8 @@ jobs:
             pip install --upgrade pip setuptools wheel
             make dev
             pip install --upgrade tox-pyenv
-            pyenv local $(echo $(for V in $(seq 6 9); do (pyenv versions | grep " *3.${V}\." | tail -1); done))
+            pyenv local system
+            pyenv local $(echo $(for V in $(seq 6 9); do (pyenv versions | grep "3\.${V}\."); done))
             pyenv local
             python3.6 --version
             python3.7 --version
