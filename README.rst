@@ -6,13 +6,12 @@ testo
 .. image:: https://img.shields.io/pypi/v/testo.svg
         :target: https://pypi.python.org/pypi/testo
 
-.. image:: https://img.shields.io/travis/rstms/testo.svg
-        :target: https://travis-ci.com/rstms/testo
+.. image:: https://img.shields.io/circleci/build/github/rstms/testo
+        :alt: CircleCI
 
 .. image:: https://readthedocs.org/projects/testo/badge/?version=latest
         :target: https://testo.readthedocs.io/en/latest/?version=latest
         :alt: Documentation Status
-
 
 .. image:: https://pyup.io/repos/github/rstms/testo/shield.svg
      :target: https://pyup.io/repos/github/rstms/testo/
