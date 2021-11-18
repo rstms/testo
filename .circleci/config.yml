@@ -17,6 +17,8 @@ jobs:
       - run:
           name: configure python versions
           command: |
+            pwd
+            echo PATH=$PATH
             pyenv local system
             pyenv local $(echo $(for V in $(seq 6 9); do (pyenv versions | grep "3\.${V}\."); done))
             pyenv local
