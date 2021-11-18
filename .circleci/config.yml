@@ -25,6 +25,8 @@ jobs:
             pyenv local system
             pyenv local $(echo $(for V in $(seq 6 9); do (pyenv versions | grep "3\.${V}\."); done))
             pyenv local
+            ls -al
+            pwd
             python3.6 --version
             python3.7 --version
             python3.8 --version
