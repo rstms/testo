@@ -11,21 +11,19 @@ workflows:
 jobs:
   build-and-test:
     docker:
-      - image: cimg/python:3.9
+      - image: rstms/python-hydra:1.0.0
     steps:
       - checkout
       - run:
           name: install dependencies
           command: |
+            python -m venv venv
+            . venv/bin/activate
             pip install --upgrade pip setuptools wheel
-            pyenv install 3.6.15
-            pyenv install 3.7.12
-            pyenv install 3.8.12
-            pyenv local system 
-            pyenv local $(echo $(for V in $(seq 6 9); do (pyenv versions | grep 3.$V); done))
-            pyenv local
-            pip install --upgrade tox tox-pyenv
             make dev
+            pip install --upgrade tox-pyenv
+            pyenv local $(echo $(for V in $(seq 6 9); do (pyenv versions | grep " *3.${V}\." | tail -1); done))
+            pyenv local
       - run:
           name: Run all tests
           command: make tox
