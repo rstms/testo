@@ -19,6 +19,9 @@ jobs:
           command: |
             pwd
             echo PATH=$PATH
+            ls -al /home/hydra
+            cat /home/hydra/.bashrc
+            set
             pyenv local system
             pyenv local $(echo $(for V in $(seq 6 9); do (pyenv versions | grep "3\.${V}\."); done))
             pyenv local
