@@ -15,24 +15,29 @@ jobs:
     steps:
       - checkout
       - run:
-          name: install dependencies
+          name: configure python versions
           command: |
-            python -m venv venv
-            . venv/bin/activate
-            pip install --upgrade pip setuptools wheel
-            make dev
-            pip install --upgrade tox-pyenv
             pyenv local system
             pyenv local $(echo $(for V in $(seq 6 9); do (pyenv versions | grep "3\.${V}\."); done))
             pyenv local
-            ls -al
-            pwd
             python3.6 --version
             python3.7 --version
             python3.8 --version
             python3.9 --version
       - run:
+          name: activate install dependencies
+          command: |
+            pwd
+            echo PATH=$PATH
+            python -m venv venv
+            . venv/bin/activate
+            pip install --upgrade pip setuptools wheel
+            make dev
+            pip install --upgrade tox-pyenv
+      - run:
           name: Run all tests
           command: |
+            pwd
+            echo PATH=$PATH
             . venv/bin/activate
             make tox
