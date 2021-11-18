@@ -18,9 +18,12 @@ jobs:
           name: install dependencies
           command: |
             pip install --upgrade pip setuptools wheel
-            pip install --upgrade tox tox-pyenv
+            pyenv install 3.6.15
+            pyenv install 3.7.12
+            pyenv install 3.8.12
             pyenv versions
             pyenv local 3.6 3.7 3.8 3.9
+            pip install --upgrade tox tox-pyenv
             make dev
       - run:
           name: Run all tests
