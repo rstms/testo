@@ -17,6 +17,8 @@ jobs:
       - run:
           name: Install Dependencies
           command: |
+            python -m venv venv
+            . venv/bin/activate
             pip install --upgrade pip setuptools wheel
             make dev
             pip install --upgrade tox-pyenv
