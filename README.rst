@@ -14,9 +14,11 @@ testo
         :alt: Documentation Status
 
 .. image:: https://pyup.io/repos/github/rstms/testo/shield.svg
-     :target: https://pyup.io/repos/github/rstms/testo/
-     :alt: Updates
+        :target: https://pyup.io/repos/github/rstms/testo/
+        :alt: Updates
 
+.. image:: https://img.shields.io/github/license/rstms/testo
+        :alt: GitHub
 
 
 testo tests
