@@ -24,4 +24,6 @@ jobs:
             pip install --upgrade tox-pyenv
       - run:
           name: Run All Tests
-          command: make tox
+          command: |
+            . venv/bin/activate
+            make tox
