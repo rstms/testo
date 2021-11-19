@@ -11,30 +11,15 @@ workflows:
 jobs:
   build-and-test:
     docker:
-      - image: rstms/python-hydra:1.0.1
+      - image: rstms/python-hydra:1.0.2
     steps:
       - checkout
       - run:
-          name: configure python versions
+          name: Install Dependencies
           command: |
-            . /home/hydra/.pyenv_init
-            pyenv local system
-            pyenv local $(echo $(for V in $(seq 6 9); do (pyenv versions | grep "3\.${V}\."); done))
-            pyenv local
-            python3.6 --version
-            python3.7 --version
-            python3.8 --version
-            python3.9 --version
-      - run:
-          name: activate install dependencies
-          command: |
-            python -m venv venv
-            . venv/bin/activate
             pip install --upgrade pip setuptools wheel
             make dev
             pip install --upgrade tox-pyenv
       - run:
-          name: Run all tests
-          command: |
-            . venv/bin/activate
-            make tox
+          name: Run All Tests
+          command: make tox
