@@ -6,8 +6,8 @@ testo
 .. image:: https://img.shields.io/pypi/v/testo.svg
         :target: https://pypi.python.org/pypi/testo
 
-.. image:: https://img.shields.io/circleci/build/github/rstms/testo
-        :alt: CircleCI
+.. image:: https://circleci.com/gh/rstms/testo/tree/master.svg?style=shield
+        :target: https://circleci.com/gh/rstms/testo/tree/master 
 
 .. image:: https://readthedocs.org/projects/testo/badge/?version=latest
         :target: https://testo.readthedocs.io/en/latest/?version=latest
