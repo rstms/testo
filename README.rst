@@ -20,9 +20,6 @@ testo
         :target: https://pyup.io/repos/github/rstms/testo/
         :alt: Updates
 
-.. image:: https://img.shields.io/github/license/rstms/testo
-        :alt: GitHub
-
 testo tests
 
 
